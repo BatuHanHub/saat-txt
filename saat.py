@@ -1,3 +1,5 @@
+#sorunu çözmeye çalışacağım :)
+
 from datetime import datetime # zaman kütüp hanesi eklendi
 
 tarih = datetime.now() # tarih eklendi
