@@ -1,26 +1,33 @@
-#sorunu çözmeye çalışacağım :)
+import datetime #kütüphane eklendi
 
-from datetime import datetime # zaman kütüp hanesi eklendi
+tarih = datetime.datetime.now() # tarih eklendi
 
-tarih = datetime.now() # tarih eklendi
-saat = datetime.now() # saat eklendi
-
-tarih.strftime('%d.%m.%y')
-saat.strftime('%H.%M')
+#print(tarih.strftime('%d.%m.%y'))
+#print(tarih.strftime('%H.%M'))
+#input()
 
 print("Hoşgeldiniz! bu program her saat başı .txt dosyası olusturur.")
 
 while True: #program döngüye sokuldu
     
-    if saat.strftime('%M') == 00: # eğer dakika 00 ise aşağıdaki işlemler başlar
-        dosya = open(f"{tarih.strftime('%d.%m.%y')} - {saat.strftime('%H.%M')}.txt","w") # dosya oluşturuluyor
-        dosya.write(f"Bugun {tarih.strftime('%d.%m.%y')} Saat:{saat.strftime('%H.%M')}") #dosya yazılıyor
+    #tarih.strftime('%H')
+    #artık çalışıyor
+    if tarih.strftime('%H') == tarih.strftime("%H"):
+        dosya = open(f"{tarih.strftime('%d.%m.%y')}-{tarih.strftime('%H.%M')}.txt","w")
+        dosya.write(f'Bugün:{tarih.strftime("%d.%m.%y Saat: %H.%M")}')
+        #dosya.write(f"Bugün:{tarih.strftime('%d.%m.%y')} Saat:{tarih.strftime('%H.%M')}")
+        dosya.close()
+        
+        
+        
+    '''çalışmıyor                                                    
+    if tarih.strftime('%M') == '39': # eğer dakika 00 ise aşağıdaki işlemler başlar 
+        dosya = open(f"{tarih.strftime('%d.%m.%y')} - {tarih.strftime('%H.%M')}.txt","w") # dosya oluşturuluyor
+        dosya.write(f"Bugun {tarih.strftime('%d.%m.%y')} Saat:{tarih.strftime('%H.%M')}") #dosya yazılıyor
         dosya.close() # dosya yazma işlemi kapatılıyor
         print("\ndosya oluşturuldu.") # işlem bitince ekrana yazı yazılıyor
         continue 
-    
-    else:
-        continue
+    '''
 
 """
 (...)
