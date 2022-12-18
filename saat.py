@@ -21,7 +21,7 @@ while True: #program döngüye sokuldu
         
         
     '''çalışmıyor                                                    
-    if tarih.strftime('%M') == '39': # eğer dakika 00 ise aşağıdaki işlemler başlar 
+    if tarih.strftime('%M') == '00': # eğer dakika 00 ise aşağıdaki işlemler başlar 
         dosya = open(f"{tarih.strftime('%d.%m.%y')} - {tarih.strftime('%H.%M')}.txt","w") # dosya oluşturuluyor
         dosya.write(f"Bugun {tarih.strftime('%d.%m.%y')} Saat:{tarih.strftime('%H.%M')}") #dosya yazılıyor
         dosya.close() # dosya yazma işlemi kapatılıyor
