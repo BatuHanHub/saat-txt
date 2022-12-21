@@ -4,6 +4,8 @@ import time #Sayaç kütüphanesi
 
 #zaman = datetime.datetime.now() seni yaramaz kod satırı :D
 
+print("Hoşgeldiniz! bu program her saat başı .txt dosyası olusturur.")
+
 while True: #program döngüye girdi
 
     zaman = datetime.datetime.now() #Zaman değişkeni şimdiki zamanın verilerini tutuyor
