@@ -1,54 +1,22 @@
-import datetime #kütüphane eklendi
+#KÜTÜPHANELER
+import datetime #Zaman kütüphanesi
+import time #Sayaç kütüphanesi
 
-tarih = datetime.datetime.now() # tarih eklendi
+#zaman = datetime.datetime.now() seni yaramaz kod satırı :D
 
-#print(tarih.strftime('%d.%m.%y'))
-#print(tarih.strftime('%H.%M'))
-#input()
+while True: #program döngüye girdi
 
-print("Hoşgeldiniz! bu program her saat başı .txt dosyası olusturur.")
+    zaman = datetime.datetime.now() #Zaman değişkeni şimdiki zamanın verilerini tutuyor
 
-while True: #program döngüye sokuldu
-    
-    #tarih.strftime('%H')
-    #artık çalışıyor
-    if tarih.strftime('%H') == tarih.strftime("%H"):
-        dosya = open(f"{tarih.strftime('%d.%m.%y')}-{tarih.strftime('%H.%M')}.txt","w")
-        dosya.write(f'Bugün:{tarih.strftime("%d.%m.%y Saat: %H.%M")}')
-        #dosya.write(f"Bugün:{tarih.strftime('%d.%m.%y')} Saat:{tarih.strftime('%H.%M')}")
-        dosya.close()
-        
-        
-        
-    '''çalışmıyor                                                    
-    if tarih.strftime('%M') == '00': # eğer dakika 00 ise aşağıdaki işlemler başlar 
-        dosya = open(f"{tarih.strftime('%d.%m.%y')} - {tarih.strftime('%H.%M')}.txt","w") # dosya oluşturuluyor
-        dosya.write(f"Bugun {tarih.strftime('%d.%m.%y')} Saat:{tarih.strftime('%H.%M')}") #dosya yazılıyor
-        dosya.close() # dosya yazma işlemi kapatılıyor
-        print("\ndosya oluşturuldu.") # işlem bitince ekrana yazı yazılıyor
-        continue 
-    '''
-
-"""
-(...)
-
-#deneme 1
-
-baslangıc = open(f'deneme.txt',"w")
-baslangıc.write(f'Bugün {tarih} Saat:{saat}')
-baslangıc.close()
-
-print("Hoşgeldiniz! bu program her saat başı .txt dosyası olusturur.")
-
-while True: # program döngüye sokuldu
-
-    if saat.minute == 00: # eğer saatin dakikası '00' olursa aşağıdaki işlemler yapılır
-        dosya = open(f"{tarih} - {saat}.txt","w") # dosyanın başlığı "(tarih) - (saat).txt" olarak kaydedilecek # "w" yazdırma komutu
-        dosya.write(f'Bugün {tarih} Saat:{saat}') # dosyanın içine "Bugün (Tarih) Saat:(saat)"
-        dosya.close() # dosya yazdırma işlemi bitirildi
-        print('dosya başarıyla yazdırıldı.')
-        continue # döngü devam eder
-        
-    else: # değilse program devam edecek
+    #eğer dakika 00 ise aşağıdaki kodlar çalışır
+    if zaman.minute == 00:
+        dosya = open (f"{zaman.strftime('%d.%m.%y')}.txt","w")
+        dosya.write(f'Bugün:{zaman.strftime("%d.%m.%y Saat: %H.%M")}') 
+        dosya.close() #dosya ile işi bitiyor
+        print("Dosya yazıldı.") #İşlem bitince ekrana yazı yazıyor
+        time.sleep(59) #59 dakika bekliyor...
         continue
-"""
+    
+    #değilse dönmeye devam :)
+    else:
+        continue
